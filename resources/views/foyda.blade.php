@@ -57,7 +57,7 @@
             @endforeach
         @else
             @foreach ($applications as $application)
-            @dd( $application->user->name)
+            @if($application->user->name)
             {{-- @dd(auth()->user()->role->name) --}}
                 {{-- @if (auth()->user()->role->name == $application->user->name) --}}
                     <div class="flex">

@@ -35,8 +35,11 @@
                                             <div class="mb-3 text-xl font-bold">
                                                 {{ $application->client_name }}-{{ $application->client_phone_number }}
                                             </div>
-                                            <div class="text-xl flex text-neutral-600"><h3 class="font-bold uppercase">{{ $application->product_address }}</h3> -
-                                                {{ $application->product_name }}</div>
+                                            <div class="text-xl flex text-neutral-600">
+                                                <h3 class="font-bold uppercase">{{ $application->product_address }}</h3>
+                                                -
+                                                {{ $application->product_name }}
+                                            </div>
                                         </div>
 
                                         <div>
@@ -72,23 +75,23 @@
                                                     <span class=""> Umumiy Foyda
                                                         <p class="flex">
                                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                            viewBox="0 0 24 24" stroke-width="1.5"
-                                                            stroke="currentColor" class="w-6 h-6">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                        </svg>
-                                                        <?php echo  $total = $application->price_org - $application->price_selled?>
+                                                                viewBox="0 0 24 24" stroke-width="1.5"
+                                                                stroke="currentColor" class="w-6 h-6">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                            </svg>
+                                                            <?php echo $total = $application->price_selled - $application->price_org; ?>
                                                         </p>
                                                     </span>
                                                     <span class=""> Sotuvchi foydasi
                                                         <p class="flex">
                                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                            viewBox="0 0 24 24" stroke-width="1.5"
-                                                            stroke="currentColor" class="w-6 h-6">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                        </svg>
-                                                        <?php echo  $total = ($application->price_org - $application->price_selled) * 0.15 ?>
+                                                                viewBox="0 0 24 24" stroke-width="1.5"
+                                                                stroke="currentColor" class="w-6 h-6">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                            </svg>
+                                                            <?php echo $total = ($application->price_selled - $application->price_org) * 0.15; ?>
                                                         </p>
                                                     </span>
                                                 </div>
@@ -97,7 +100,7 @@
                                     </div>
                                 @endforeach
                                 <p class="mt-5 mr-5">
-                                    {{$applications->links()}}
+                                    {{ $applications->links() }}
                                 </p>
 
                             </div>
@@ -142,13 +145,7 @@
                                                 <div class="flex">
                                                     <label
                                                         class="uppercase mr-5 mt-5 text-sm font-bold opacity-70">File</label>
-                                                    <input type="file" name="file_f"
-                                                        class="p-3 mt-2 mb-4 w-full bg-slate-200 rounded">
-                                                </div>
-                                                <div class="flex">
-                                                    <label
-                                                        class="uppercase mr-5 mt-5 text-sm font-bold opacity-70">File</label>
-                                                    <input type="file" name="file_s"
+                                                    <input type="file" name="file_url"
                                                         class="p-3 mt-2 mb-4 w-full bg-slate-200 rounded">
                                                 </div>
                                                 <input type="submit"

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ApplicationCreated;
 use App\Models\Application;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ApplicationController extends Controller
 {
@@ -25,8 +28,7 @@ class ApplicationController extends Controller
             'client_phone_number' => 'required|max:255',
             'price_org' => 'required|max:255',
             'price_selled' => 'required|max:255',
-            'file_f'=> 'file| mimes: jpeg, jpg, pdf, png',
-            'file_s'=> 'file| mimes: jpeg, jpg, pdf, png',
+            'file_url'=> 'file| mimes:jpeg,jpg,pdf,png',
         ]);
         $application = Application::create([
             'user_id'=> auth()->user()->id,
@@ -36,9 +38,11 @@ class ApplicationController extends Controller
             'client_phone_number' => $request->client_phone_number,
             'price_org' => $request->price_org,
             'price_selled' => $request->price_selled,
-            'file_f' => $path ?? null,
-            'file_s' => $path ?? null,
+            'file_url' => $path ?? null,
         ]);
+
+        // $manager = User::first();
+        // Mail::to($manager)->send(new ApplicationCreated($application));
         return redirect()-> back();
     }
 }

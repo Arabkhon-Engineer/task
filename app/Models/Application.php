@@ -16,8 +16,7 @@ class Application extends Model
         'client_phone_number',
         'price_org',
         'price_selled',
-        'file_f',
-        'file_s',
+        'file_url',
 
     ];
 

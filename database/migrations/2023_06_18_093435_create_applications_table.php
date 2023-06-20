@@ -19,8 +19,7 @@ return new class extends Migration
             $table->text('client_phone_number');
             $table->text('price_org');
             $table->text('price_selled');
-            $table->text('file_f')->nullable();
-            $table->text('file_s')->nullable();
+            $table->text('file_url')->nullable();
             $table->timestamps();
         });
     }
